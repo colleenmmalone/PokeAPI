@@ -50,7 +50,7 @@ function getData() {
             }
         } else {
             // Ready state is not DONE
-            dataSection.innerHTML = 'Loading...'; 
+            dataSection.innerHTML = 'I\'m thinking...'; 
         }
     }
 }
