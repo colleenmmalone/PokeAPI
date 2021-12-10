@@ -84,4 +84,6 @@ function displayData(response) {
     dataSection.appendChild(typesArr);
     dataSection.appendChild(baseXP);
     dataSection.appendChild(pix);
+    
+    
 }
