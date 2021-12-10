@@ -1,24 +1,26 @@
 //https://pokeapi.co/api/v2/pokemon/eevee
 //https://pokeapi.co/api/v2/pokemon/10
 
-// Endpoint you are sending a GET request to
-var apiURL = 'https://pokeapi.co/api/v2/pokemon/';
+var apiURL = 'https://pokeapi.co/api/v2/pokemon/'; // Endpoint you are sending a GET request to
 
-document.getElementById('getData').onclick = getData;
+document.getElementById('getData').onclick = getData; //getData is my button id
 
 function getData() {
     // If using input for identifiers, etc.    
-    var userInput = document.getElementById('dataInput').value; // 5
-    // 4 steps to making an AJAX call
+    var userInput = document.getElementById('dataInput').value; // my texbox
+
+    // 4 steps to making an AJAX call ==========================================================
+
     // STEP 1: Create an XML Http Request object
     var xhttp = new XMLHttpRequest();
+
     // STEP 2: Set a callback function for the readystatechange event
     xhttp.onreadystatechange = receiveData;
 
     // STEP 3: Open the request 
-    //https://reqres.in/api/users/5
-    xhttp.open('GET', apiURL + '' + userInput.toLowerCase());
-
+    //where userInput = 10
+    xhttp.open('GET', apiURL + '' + userInput.toLowerCase()); //was not recognizing capitalization
+    // GET https://pokeapi.co/api/v2/pokemon/10
 
     // STEP 4: Send the request
     xhttp.send();
@@ -34,66 +36,52 @@ function getData() {
             4: DONE
         */
         // Emptying out the div before inserting new data.
-        var dataSection = document.getElementById('restData');
-        dataSection.innerHTML = '';
-        if (xhttp.readyState === 4) {
-            if (xhttp.status === 200) {
-                // Ready state is DONE, HTTP status code is "OK"
+        var dataSection = document.getElementById('restData'); // my div
+        dataSection.innerHTML = ''; //clear contents of div
+        if (xhttp.readyState === 4) { //if done
+            if (xhttp.status === 200) { // HTTP status code is "OK"
                 var response = xhttp.responseText;
-                response = JSON.parse(response);
-                displayData(response);
-                console.log(response)
+                response = JSON.parse(response); //parse a JSON object to a "readable" output
+                displayData(response); //calls displayData function
+                //console.log(response)
             } else {
                 // Ready state is DONE but status code is not "OK"
                 dataSection.innerHTML = 'It Got Away!';
             }
         } else {
             // Ready state is not DONE
-            /*
-                Can have some sort of "loading" action
-            */
-           
+            dataSection.innerHTML = 'Loading...'; 
         }
     }
 }
 
-
-function createTypes(types, ul){
-    types.forEach(function(type){
-    let typeLi = document.createElement('li');
-    typeLi.innerText = type['type']['name'];
-    ul.append(typeLi)
-    })
-  }
-
 function displayData(response) {
-    var dataSection = document.getElementById('restData');
+    var dataSection = document.getElementById('restData'); //my div, now named dataSection
     
-    var idTag = document.createElement('h3');
-    idTag.innerHTML=`name: ${response.species.name}`;
-    var num = document.createElement('h3');
+    var idTag = document.createElement('h3'); //create a new header that exists somewhere
+    idTag.innerHTML=`name: ${response.species.name}`; //print name in my new header
+
+    var num = document.createElement('h3'); //number
     num.innerHTML=`number: ${response.id}`;
-    var baseXP = document.createElement('h3');
-    baseXP.innerHTML=`base experience: ${response.base_experience}`;
-    var pix = document.createElement('h3');
-    pix.innerHTML=`<center><img src="${response.sprites.front_default}" style="width: 200px;"><img src="${response.sprites.front_shiny}" style="width: 200px;"></center>`;
 
-
-    var types = document.createElement('h3');
-    var t = (response.types).length;
-    if(t == 1){
-        types.innerHTML = `type: ${response.types[0].type.name}`;
+    //Pokémon can have one or two types, they arrive as an array, causes errors if arr[1] is null
+    var typesArr = document.createElement('h3'); //typing
+    var t = (response.types).length; //find length of types array I GOT
+    if(t == 1){ //print according to number of types
+        typesArr.innerHTML = `type: ${response.types[0].type.name}`;
     }else{
-        types.innerHTML = `types: ${response.types[0].type.name}, ${response.types[1].type.name}`;
+        typesArr.innerHTML = `types: ${response.types[0].type.name}, ${response.types[1].type.name}`;
     }
 
-    dataSection.appendChild(idTag);
+    var baseXP = document.createElement('h3'); //base exp
+    baseXP.innerHTML=`base experience: ${response.base_experience}`;
+
+    var pix = document.createElement('h3'); //pictures: regular + shiny
+    pix.innerHTML=`<center><img src="${response.sprites.front_default}" style="width: 200px;"><img src="${response.sprites.front_shiny}" style="width: 200px;"></center>`;
+
+    dataSection.appendChild(idTag); //append the headers I created to the dataSection div
     dataSection.appendChild(num);
-    dataSection.appendChild(types);
+    dataSection.appendChild(typesArr);
     dataSection.appendChild(baseXP);
     dataSection.appendChild(pix);
-    
-  //  dataSection.appendChild(lastTag);
-  //  dataSection.appendChild(avatarTag);
-   
 }

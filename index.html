@@ -1,33 +1,37 @@
 <html>
     <head>
-        <title>Pokemon Ajax Calls</title>
-        
+        <title>PokéAPI Fetcher</title>  
         <style>
             div {
                 background-color:springgreen;
                 width: 75%;
                 height: 400px;
                 overflow: hidden;
-                
-                
             }
+
             button{
                 background-color:palegreen;
                 border: 2px solid springgreen;
                 padding: 5px;
                 border-radius: 5px;
             }
+
+            input{
+                border: 1px solid forestgreen;
+                padding: 5px;
+            }
         </style>
     </head>
+
     <body>
         <center>
         Enter Pokemon Name or Number: 
-        <input type="text" id="dataInput"/ placeholder="1 or bulbasaur">
-        <button type="button" id="getData">Get Data</button><br/>
-        <hr/>
-        <div id="restData">PokeAPI Fetcher</div>
-        <hr/>
+        <input type="text" id="dataInput" placeholder="1 or bulbasaur">
+        <button type="button" id="getData">Get Data</button><hr/>
+        <div id="restData">PokeAPI Fetcher</div><hr/>
         <a href="https://pokeapi.co/"><img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" style="height:45px;"></a>
+        </center>
         <script src="pokeScript.js"></script>
     </body>
+
 </html>
