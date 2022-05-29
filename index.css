@@ -37,7 +37,7 @@ h3{
 }
 
 #restData {
-    background-color:springgreen;
+    background-color:rgb(217, 219, 133);
     width: 75%;
     height: fit-content;
     min-height: 400px;
@@ -52,16 +52,16 @@ h3{
 }
 
 button{
-    background-color:aliceblue;
-    border: 2px solid springgreen;
-    color: forestgreen;
+    background-color:rgb(148, 163, 239);
+    border: 2px solid rgb(65, 92, 230);
+    color: rgb(35, 57, 168);
     width: fit-content;
     padding: 5px;
     border-radius: 10px;
 }
 
 input{
-    border: 1px solid forestgreen;
+    border: 1px solid rgb(35, 57, 168);
     padding: 5px;
     text-align: center;
     border-radius: 10px;
