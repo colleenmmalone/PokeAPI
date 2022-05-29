@@ -52,7 +52,7 @@ h3{
 }
 
 button{
-    background-color:palegreen;
+    background-color:aliceblue;
     border: 2px solid springgreen;
     color: forestgreen;
     width: fit-content;
@@ -86,7 +86,7 @@ button, input, p {
     margin: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
 
     #header-div{
         flex-direction: column;
