@@ -1,36 +1,35 @@
 <html>
     <head>
         <title>PokéAPI Fetcher</title>  
-        <style>
-            div {
-                background-color:springgreen;
-                width: 75%;
-                height: 400px;
-                overflow: hidden;
-            }
-
-            button{
-                background-color:palegreen;
-                border: 2px solid springgreen;
-                padding: 5px;
-                border-radius: 5px;
-            }
-
-            input{
-                border: 1px solid forestgreen;
-                padding: 5px;
-            }
-        </style>
+        <link rel="stylesheet" href="index.css">
     </head>
 
     <body>
-        <center>
-        Enter Pokemon Name or Number: 
-        <input type="text" id="dataInput" placeholder="1 or bulbasaur">
-        <button type="button" id="getData">Get Data</button><hr/>
-        <div id="restData">PokeAPI Fetcher</div><hr/>
-        <a href="https://pokeapi.co/"><img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" style="height:45px;"></a>
-        </center>
+        <div id="main-container">
+
+        <div id="header-div">
+            <h3>Enter Pokemon Name or Number:</h3> 
+            <input type="text" id="dataInput" placeholder="1 or bulbasaur">
+            <button type="button" id="getData">Search Pokédex</button>
+        </div>
+
+        <hr/>
+
+        <div id="restData">
+            <p>PokeAPI Fetcher</p>
+        </div>
+        
+        <hr/>
+        <div id="logo-container">
+        <a href="https://pokeapi.co/">
+            <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" id="poke-logo">
+        </a>
+        </div>
+        
+
+        </div>
+
+
         <script src="pokeScript.js"></script>
     </body>
 

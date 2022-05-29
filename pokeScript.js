@@ -77,7 +77,7 @@ function displayData(response) {
     baseXP.innerHTML=`base experience: ${response.base_experience}`;
 
     var pix = document.createElement('h3'); //pictures: regular + shiny
-    pix.innerHTML=`<center><img src="${response.sprites.front_default}" style="width: 200px;"><img src="${response.sprites.front_shiny}" style="width: 200px;"></center>`;
+    pix.innerHTML=`<center><img src="${response.sprites.front_default}" class="sprite" ><img src="${response.sprites.front_shiny}" class="sprite"></center>`;
 
     dataSection.appendChild(idTag); //append the headers I created to the dataSection div
     dataSection.appendChild(num);

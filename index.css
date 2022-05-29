@@ -1,0 +1,109 @@
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    
+    /* align-content: center; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+#main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    text-align: center;
+}
+
+hr{
+    width: 100%;
+}
+
+
+#header-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+}
+
+h3{
+    font-weight: normal;
+    margin: 2px;
+}
+
+#restData {
+    background-color:springgreen;
+    width: 75%;
+    height: fit-content;
+    min-height: 400px;
+
+    padding: 3% 0;
+    /* overflow: hidden; */
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+
+}
+
+button{
+    background-color:palegreen;
+    border: 2px solid springgreen;
+    color: forestgreen;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+input{
+    border: 1px solid forestgreen;
+    padding: 5px;
+    text-align: center;
+}
+
+button, input, p {
+    font-size: 18px;
+}
+
+#logo-container{
+    width: 100%;
+}
+#poke-logo{
+    width: 250px;
+
+
+
+}
+
+.sprite{
+    width: 50%;
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #header-div{
+        flex-direction: column;
+    }
+
+    #poke-logo{
+        width: 40%;
+        height: auto;
+    }
+
+    #restData{
+        width: 100%;
+        padding: 40px 0;
+    }
+
+    .sprite{
+        width: 70%;
+    }
+
+
+      }
