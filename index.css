@@ -64,6 +64,7 @@ input{
     border: 1px solid forestgreen;
     padding: 5px;
     text-align: center;
+    border-radius: 10px;
 }
 
 button, input, p {
